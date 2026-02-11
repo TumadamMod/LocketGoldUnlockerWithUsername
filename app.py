@@ -8,7 +8,7 @@ import requests
 app = Flask(__name__)
 
 # Initialize API and Auth
-subscription_id = "locket_1600_1y"
+subscription_ids = ["locket_1600_1y", "locket_199_1m", "locket_199_1m_only", "locket_3600_1y" ,"locket_399_1m_only", ""]
 auth = Auth("locket@maihuybao.dev", "Mhbao@26062007")
 try:
     token = auth.get_token()
@@ -126,14 +126,14 @@ def restore_purchase():
         entitlements = restore_result.get("subscriber", {}).get("entitlements", {})
         gold_entitlement = entitlements.get("Gold", {})
 
-        if gold_entitlement.get("product_identifier") == subscription_id:
+        if gold_entitlement.get("product_identifier") in subscription_ids:
             # Send Telegram notification
-            send_telegram_notification(username, uid_target, subscription_id, restore_result)
+            send_telegram_notification(username, uid_target, gold_entitlement.get("product_identifier"), restore_result)
 
             return jsonify(
                 {
                     "success": True,
-                    "msg": f"Purchase {subscription_id} for {username} successfully!",
+                    "msg": f"Purchase {gold_entitlement.get("product_identifier")} for {username} successfully!",
                 }
             )
         else:
