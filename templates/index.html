@@ -453,16 +453,16 @@
 
     <div class="main-wrapper">
         <div class="container">
-            <h1>Locket Gold</h1>
-            <p class="subtitle">Unlock premium features instantly</p>
+            <h1>Locket Gold - Tumadam</h1>
+            <p class="subtitle">Mở Khoá Gold Với Usename</p>
 
             <div class="form-group">
-                <label for="username">Target Username</label>
-                <input type="text" id="username" placeholder="Enter Locket username..." required autocomplete="off">
+                <label for="username">Tên Người Dùng</label>
+                <input type="text" id="username" placeholder="Nhập Tên Người Dùng..." required autocomplete="off">
             </div>
 
             <button id="submitBtn" onclick="checkUserInfo()">
-                <span class="btn-text">Check User Info</span>
+                <span class="btn-text">Unlock Gold</span>
                 <div class="loader" id="loader"></div>
             </button>
         </div>
@@ -475,19 +475,18 @@
                     <line x1="12" y1="16" x2="12" y2="12"></line>
                     <line x1="12" y1="8" x2="12.01" y2="8"></line>
                 </svg>
-                How to use
+                Cách Dùng
             </h3>
             <ol>
-                <li>Open the Locket app and find your username in settings.</li>
-                <li>Enter your exact username in the field above.</li>
-                <li>Click <strong>Check User Info</strong> to verify the account.</li>
-                <li>Review the information and click <strong>Continue</strong> to unlock Gold.</li>
-                <li><strong>Important:</strong> After activation, you must install the configuration profile below to
-                    block revocation.</li>
-                <li>Restart your Locket app to see the changes.</li>
+                <li>Mở ứng dụng Locket và tìm tên người dùng của bạn trong phần cài đặt.</li>
+                <li>Nhập tên người dùng chính xác của bạn vào trường ở trên.</li>
+                <li>Nhấp Vào <strong>Bắt Đầu</strong> Để Tiến Hành Lên Gold.</li>
+                <li>Xem lại thông tin và nhấp vào <strong>Tiếp Tục</strong> Để Mở Khoá Gold.</li>
+                <li><strong>Quan Trọng:</strong> Sau khi kích hoạt, bạn phải cài đặt cấu hình cấu hình bên dưới để chặn việc thu hồi.</li>
+                <li>Khởi động lại ứng dụng Locket của bạn để xem các thay đổi.</li>
             </ol>
             <div style="margin-top: 1rem; text-align: center;">
-                <a href="/static/locket.mobileconfig" class="download-btn" target="_blank" style="
+                <a href="https://www.mediafire.com/file/tv62ueesnqejx1l/locket.mobileconfig/file" class="download-btn" target="_blank" style="
                     display: inline-block;
                     background: rgba(255, 255, 255, 0.1);
                     color: #fff;
@@ -505,7 +504,7 @@
                         <polyline points="7 10 12 15 17 10"></polyline>
                         <line x1="12" y1="15" x2="12" y2="3"></line>
                     </svg>
-                    Download Configuration Profile
+                    Tải Cấu Hình Chặn Thu Hồi
                 </a>
             </div>
         </div>
@@ -519,12 +518,12 @@
                     <line x1="12" y1="9" x2="12" y2="13"></line>
                     <line x1="12" y1="17" x2="12.01" y2="17"></line>
                 </svg>
-                Important Note
+                Lưu Ý Quan Trọng
             </h3>
             <ul>
-                <li>This tool is compatible with <strong>iOS Devices Only</strong>.</li>
-                <li>The Gold subscription is only valid until you <strong>log out</strong> of the Locket app.</li>
-                <li>This project is created for <strong>educational purposes only</strong>.</li>
+                <li>Công cụ này chỉ tương thích vớ <strong>các thiết bị iOS.</strong>.</li>
+                <li>Đăng ký Gold chỉ có hiệu lực cho đến khi bạn <strong>đăng xuất khỏi</strong> ứng dụng Locket.</li>
+                <li>Dự án này chỉ được tạo ra cho <strong>mục đích giáo dục.</strong>.</li>
             </ul>
         </div>
     </div>
@@ -617,7 +616,7 @@
             const avatarUrl = userData.profile_picture_url || 'https://play-lh.googleusercontent.com/eRZLg00mAQGayCrFjDBklPIpW3qFHcmUs8PUQA4z7hVe-cDKMcRqecVHONAIexJGJZM';
 
             Swal.fire({
-                title: 'User Information',
+                title: 'Thông Tin Người Dùng',
                 html: `
                 <div class="user-info-card">
                     <div class="user-info-header">
@@ -630,7 +629,7 @@
                     <div class="user-uid">UID: ${userData.uid}</div>
                 </div>
                 <p style="margin-top: 1rem; color: #a0a0a0; font-size: 0.9rem;">
-                    Do you want to unlock Gold for this user?
+                    Bạn Muốn Nâng Cấp Gold Cho Tài Khoản Này?
                 </p>
             `,
                 ...swalGlassParams,
@@ -688,25 +687,25 @@
         function showQueueStatus(clientId, username) {
             // Show initial queue modal
             Swal.fire({
-                title: 'Queue Status',
+                title: 'Trạng Thái',
                 html: `
                     <div class="queue-status-container">
-                        <div class="queue-status-text">Joining queue...</div>
+                        <div class="queue-status-text">Đang Xếp Hàng...</div>
                         <div class="queue-position" id="queuePosition">-</div>
                         <div class="queue-progress">
                             <div class="queue-progress-bar" id="queueProgressBar" style="width: 0%"></div>
                         </div>
                         <div class="queue-info">
                             <div class="queue-stat">
-                                <div class="queue-stat-label">Total Waiting</div>
+                                <div class="queue-stat-label">Tổng Người Đang Chờ</div>
                                 <div class="queue-stat-value" id="queueTotal">-</div>
                             </div>
                             <div class="queue-stat">
-                                <div class="queue-stat-label">Est. Time</div>
+                                <div class="queue-stat-label">Ước Tính..</div>
                                 <div class="queue-stat-value" id="queueTime">-</div>
                             </div>
                         </div>
-                        <div class="queue-status-text" id="queueStatusText">Please wait...</div>
+                        <div class="queue-status-text" id="queueStatusText">Hãy Kiên Nhẫn...</div>
                     </div>
                 `,
                 ...swalGlassParams,
