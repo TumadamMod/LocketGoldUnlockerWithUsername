@@ -1,4 +1,4 @@
-# Locket Gold Username Unlock
+# Locket Gold Unlock With Username
 
 Unlock Locket Gold premium features **with just a username** — no password required! Built with Flask, featuring an intelligent queue management system and beautiful glassmorphism UI.
 
